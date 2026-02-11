@@ -411,11 +411,8 @@ def main() -> int:
            # if config.gemini_api_key:
            #     analyzer = GeminiAnalyzer(api_key=config.gemini_api_key)
 
-            if config.gemini_api_key or config.openai_api_key:
-                analyzer = GeminiAnalyzer(
-                    api_key=config.gemini_api_key,
-                    openai_key=config.openai_api_key
-                )
+            if config.openai_api_key:
+                analyzer = OpenAIAnalyzer(openai_api_key=config.openai_api_key)
                 
             run_market_review(notifier, analyzer, search_service)
             return 0
