@@ -408,8 +408,8 @@ def main() -> int:
                     serpapi_keys=config.serpapi_keys
                 )
             
-            if config.gemini_api_key:
-                analyzer = GeminiAnalyzer(api_key=config.gemini_api_key)
+            if config.gemini_api_keys:
+                analyzer = GeminiAnalyzer(api_key=config.gemini_api_keys)
 
            
             run_market_review(notifier, analyzer, search_service)
